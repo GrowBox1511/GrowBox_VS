@@ -10,6 +10,7 @@ from app import forms, views
 
 
 urlpatterns = [
+     #xddddddddddd
     path('', views.home, name='home'),
     path('xddddddddddddddddddd', views.home, name='home'),
     path('contact/', views.contact, name='contact'),
