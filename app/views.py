@@ -5,6 +5,41 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
+from firebase import Firebase
+import firebase
+
+#config = {
+#
+#    'apiKey': "J2yYL1PfOZtAfRPNQExBjEEgjOPgF5HrUhftgVDz",
+#    'authDomain': "rdsbase-4da2c.firebaseio.com",
+#    'databaseURL': "https://rdsbase-4da2c.firebaseio.com/",
+#    'projectId': "rdsbase-4da2c",
+#    'storageBucket': "rdsbase-4da2c.appspot.com",
+#    'messagingSenderId': "579985583952"
+#    
+#    }
+#
+#firebase = firebase_admin.App(name = '[https://rdsbase-4da2c.firebaseio.com/]', credential = "J2yYL1PfOZtAfRPNQExBjEEgjOPgF5HrUhftgVDz", options = "databaseURL")
+
+#result = firebase.post('qqq')
+#repub
+config = {
+  "apiKey" : "AIzaSyBdTHru5uwyqywTxsv-JWyQCFWIahegowQ",
+  "authDomain" : "rdsbase-4da2c.firebaseapp.com",
+  "databaseURL" : "https://rdsbase-4da2c.firebaseio.com",
+  "projectId" : "rdsbase-4da2c",
+  "storageBucket" : "rdsbase-4da2c.appspot.com",
+  "messagingSenderId" : "526631168898",
+  "appId" : "1:526631168898:web:a4c0b9ee28f3f29468fd9b",
+  "measurementId" : "G-46388JY1TT"
+}
+
+firebase = Firebase(config)
+
+db = firebase.database()
+
+output = db.child("values").get()
+
 
 def home(request):
     """Renders the home page."""
